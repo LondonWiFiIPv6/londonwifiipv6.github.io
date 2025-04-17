@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>London WiFi IPv6</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Map</title>
   <style>
     html, body {
       height: 100%;
@@ -13,24 +14,38 @@
       width: 100vw;
       height: 100vh;
       overflow: hidden;
+      position: relative; /* Add this */
     }
     iframe {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
       border: 0;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+    .edit-button {
+      position: absolute; /* Changed from fixed to absolute */
+	  bottom: 80px; /* Move up from the bottom */
+	  right: 20px;
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1000; /* Ensure it's on top of the map */
     }
   </style>
 </head>
 <body>
-  <iframe
-    src="https://www.google.com/maps/d/embed?mid=1F6h_0pbxiE1SPolufQB1t2rsRXcOGbI"
-    allowfullscreen
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    title="London WiFi IPv6"
-  ></iframe>
+  <iframe src="https://www.google.com/maps/d/u/0/view?mid=1F6h_0pbxiE1SPolufQB1t2rsRXcOGbI" allowfullscreen></iframe>
+  <a href="https://www.google.com/maps/d/u/0/edit?mid=1F6h_0pbxiE1SPolufQB1t2rsRXcOGbI&ui=maps" class="edit-button">Add</a>
 </body>
 </html>
